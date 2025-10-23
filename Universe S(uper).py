@@ -1,4 +1,18 @@
 from ursina import *
+
+app = Ursina()
+
+# Get screen resolution (approximate)
+import ctypes
+user32 = ctypes.windll.user32
+screen_width = user32.GetSystemMetrics(0)
+screen_height = user32.GetSystemMetrics(1)
+
+window.size = (screen_width, screen_height)
+window.borderless = True  # optional to remove window frame
+
+# Your game code below...
+from ursina import *
 import math, random
 
 app = Ursina()
